@@ -1,4 +1,4 @@
-Properties  = new Meteor.Collection('properties');
+Properties  = new Meteor.Collection('Properties');
 
 PropertySchema = new SimpleSchema({
   adress:{
@@ -32,9 +32,12 @@ PropertySchema = new SimpleSchema({
   },
   author:{
     type:String,
-    label:"Auther",
+    label:"Author",
     autoValue: function(){
       return this.userId
+    },
+    autoform:{
+      type:"hidden"
     }
   },
   createdAt:{
@@ -42,6 +45,9 @@ PropertySchema = new SimpleSchema({
     label:"Created At",
     autoValue: function(){
       return new Date()
+    },
+    autoform:{
+      type:"hidden"
     }
   }
 
