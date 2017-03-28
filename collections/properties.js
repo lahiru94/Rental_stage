@@ -1,7 +1,11 @@
-Properties  = new Meteor.Collection('Properties');
-
+properties  = new Meteor.Collection('properties');
+SimpleSchema.debug = true;
 PropertySchema = new SimpleSchema({
-  adress:{
+  title:{
+    type: String,
+    label: "Title"
+  },
+  address:{
     type: String,
     label: "Address"
   },
@@ -11,6 +15,7 @@ PropertySchema = new SimpleSchema({
   },
   district:{
     type:String,
+    allowedValues: ['Ampara','Anuradhapura','Badulla','Batticaloa','Colombo','Gampaha','Hambanthota','Jaffna','Kaluthara','Kegalle','killinochchi','Kurunegala','Mannar','Matale','Matara','Moneragala','Mullativu','Nuwara Eliys','Polonnaruwa','Puttalam','Ratnapura','Trincomalee','Vavuniya'],
     label:"District"
   },
   roomCount:{
@@ -52,5 +57,4 @@ PropertySchema = new SimpleSchema({
   }
 
 });
-
-Properties.attachSchema(PropertySchema);
+properties.attachSchema(PropertySchema);
