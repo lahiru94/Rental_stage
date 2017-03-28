@@ -30,3 +30,4 @@ userProfileSchema = new SimpleSchema({
   }
 
 });
+userProfiles.attachSchema(userProfileSchema);

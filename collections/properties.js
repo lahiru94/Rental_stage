@@ -1,5 +1,8 @@
 properties  = new Meteor.Collection('properties');
 SimpleSchema.debug = true;
+
+
+
 PropertySchema = new SimpleSchema({
   title:{
     type: String,
